@@ -10,10 +10,19 @@ $(document).ready(function(){
   document.getElementById('symptom-search').addEventListener("click", function(){
     let searchTerm = document.getElementById('symptom-query').value;
 
+    console.log(Lookup.searchBySymptom(searchTerm));
+
+
     Lookup.searchBySymptom(searchTerm).then(function(symptomResponse){
-      return symptomResponse.json();
-    }).then(function(docBySymptom) {
+      if (!symptomResponse.ok) {
+        throw Error(response.statusText)
+      }
+      return response;
+    }).then(function(symptomResponse) {
+        return symptomResponse.json();
+      }).then(function(docBySymptom) {
       results = docBySymptom;
+      console.log(results);
       if (results.meta.count > 0) {
         $(".results").html("<ul id='doctor-list'></ul>");
         results.data.forEach(function(doctor, index){
@@ -44,10 +53,12 @@ $(document).ready(function(){
       else {
         $('.results').html("<h3> Uh oh! No results for that search. Try something else! </h3>");
       }
+    }).catch(function(error){
+        return error;
+      });
     });
-  });
 
-
+//-------------------------------------------------------------
 
   document.getElementById("name-search").addEventListener("click", function(){
     $(".results").html("");
