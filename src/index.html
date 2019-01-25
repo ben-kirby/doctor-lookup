@@ -4,31 +4,32 @@
     <title>Doctor Lookup</title>
   </head>
   <body>
-    <div class="container">
+    <div class="container center">
       <div class="row">
-        <div class="col-md">
-          <form>
-            <input id="symptom-query" type="text" placeholder="Symptom">
-            <br>
-            <br>
-            <button type="button" id="symptom-search">Search Doctors by Symptom</button>
-          </form>
+          <div id="forms">
+            <div class="row">
+              <h1 id="box-title">Find a Doctor</h1>
+            </div>
+            <div class="row">
+              <div id="symptom-form" class="col-md">
+                <form>
+                  <input id="symptom-query" type="text">
+                  <br>
+                  <button type="button" id="symptom-search">Search by Symptom</button>
+                </form>
+              </div>
+              <div id="name-form" class="col-md">
+                <input id="name-query" type="text">
+                <br>
+                <button type="button" id="name-search">Search by Name</button>
+              </div>
+            </div>
+          </div>
         </div>
-        <div class="col-md">
-          <input id="name-query" type="text" placeholder="Name">
-          <br>
-          <br>
-          <button type="button" id="name-search">Search Doctors by Name</button>
+        <div class="results" class="row">
+            <ul class="list-group list-group-flush" id="doctor-list">
+            </ul>
         </div>
-      </div>
-      <br>
-      <br>
-      <div class="row">
-        <div class="results">
-          <ul id="doctor-list">
-          </ul>
         </div>
-      </div>
-    </div>
   </body>
 </html>

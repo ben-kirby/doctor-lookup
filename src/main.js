@@ -18,25 +18,25 @@ $(document).ready(function(){
         $(".results").html("<ul id='doctor-list'></ul>");
         results.data.forEach(function(doctor, index){
           $("#doctor-list").append(`
-            <li>
-              <h3>
+            <li class="list-group-item">
+              <h2 style="font-style: italic;">
                 ${doctor.profile.first_name}  ${doctor.profile.last_name}, ${doctor.profile.title}
-              </h3>
+              </h2>
             </li>`);
-            $("#doctor-list").append(`<ul id='location-list${index}'></ul>`);
+            $("#doctor-list").append(`<ul class="list-group list-group-flush" id='location-list${index}'></ul>`);
             doctor.practices.forEach(function(location){
               $(`#location-list${index}`).append(`
-                <li>
+                <li class="list-group-item">
                 <h4>${location.name}</h4>
                 <p>${location.visit_address.street}</p>
                 <p>${location.visit_address.city}, ${location.visit_address.state} ${location.visit_address.zip}</p>
-                <p>${location.phones[0].number}</p>
+                <p>${location.phones[0].number}</p></li>
               `);
               if (location.accepts_new_patients === true) {
-                $(`#location-list${index}`).append(`Accepting new partients! </li> <br><br>`)
+                $(`#location-list${index}`).append(`<li class="list-group-item">Accepting new partients! </li> <br><br>`)
               }
               else {
-                $(`#location-list${index}`).append(`Currently not accepting new partients.  </li><br><br>`)
+                $(`#location-list${index}`).append(`<li class="list-group-item">Currently not accepting new partients.  </li><br><br>`)
               }
             });
         });
@@ -46,8 +46,6 @@ $(document).ready(function(){
       }
     });
   });
-
-
 
   document.getElementById("name-search").addEventListener("click", function(){
     $(".results").html("");
@@ -61,25 +59,25 @@ $(document).ready(function(){
         $(".results").html("<ul id='doctor-list'></ul>");
         results.data.forEach(function(doctor, index){
           $("#doctor-list").append(`
-            <li>
-              <h3>
+            <li class="list-group-item">
+              <h2>
                 ${doctor.profile.first_name}  ${doctor.profile.last_name}, ${doctor.profile.title}
-              </h3>
+              </h2>
             </li>`);
-            $("#doctor-list").append(`<ul id='location-list${index}'></ul>`);
+            $("#doctor-list").append(`<ul class="list-group list-group-flush" id='location-list${index}'></ul>`);
             doctor.practices.forEach(function(location){
               $(`#location-list${index}`).append(`
-                <li>
+                <li class="list-group-item">
                 <h4>${location.name}</h4>
                 <p>${location.visit_address.street}</p>
                 <p>${location.visit_address.city}, ${location.visit_address.state} ${location.visit_address.zip}</p>
-                <p>${location.phones[0].number}</p>
+                <p>${location.phones[0].number}</p></li>
               `);
               if (location.accepts_new_patients === true) {
-                $(`#location-list${index}`).append(`Accepting new partients! </li> <br><br>`)
+                $(`#location-list${index}`).append(`<li class="list-group-item">Accepting new partients! </li> <br><br>`)
               }
               else {
-                $(`#location-list${index}`).append(`Currently not accepting new partients.  </li><br><br>`)
+                $(`#location-list${index}`).append(`<li class="list-group-item">Currently not accepting new partients.  </li><br><br>`)
               }
             });
         });

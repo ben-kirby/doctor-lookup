@@ -1,5 +1,84 @@
-#vertical-line{
-  border-left: 2px solid black;
-  height: 100%;
-  /* color: #bcbcbc; */
+body{
+  background-image: url('./img/rawpixel-618738-unsplash.jpg');
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+}
+
+.center{
+  margin: auto;
+  width: 50%;
+}
+
+.results{
+  margin-top: 55%;
+  padding-left: 25px;
+  padding-right: 25px;
+
+}
+
+#forms{
+  position: absolute;
+  top: 30%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  padding-left: 25px;
+  padding-right: 25px;
+  padding-bottom: 20px;
+  padding-top: 10px;
+  padding: 50px;
+  background-color: rgba(0, 0, 0, 0.65);
+  border: 0px;
+  border-radius: 10px;
+}
+
+#box-title{
+  font-style: italic;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 60px;
+  margin-top: 0px;
+  text-align: center;
+  color: rgba(151, 184, 193, 1);
+  text-shadow: 0px 0px 2px #000000
+}
+
+#symptom-form{
+  margin: auto;
+  width: 50%;
+  padding-right: 25px;
+
+}
+
+#symptom-query{
+  margin-bottom: 5px;
+  border-top-right-radius: 7px;
+  border-top-left-radius: 7px;
+  width: 100%;
+}
+
+#symptom-search{
+  border-bottom-right-radius: 7px;
+  border-bottom-left-radius: 7px;
+  width: 100%;
+
+}
+
+#name-form{
+  margin: auto;
+  width: 50%;
+  padding-left: 25px;
+}
+
+#name-query{
+  margin-bottom: 5px;
+  border-top-left-radius: 7px;
+  border-top-right-radius: 7px;
+  width: 100%;
+}
+
+#name-search{
+  border-bottom-right-radius: 7px;
+  border-bottom-left-radius: 7px;
+  width: 100%;
 }
