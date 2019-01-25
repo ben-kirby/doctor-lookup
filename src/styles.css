@@ -30,6 +30,10 @@ body{
   border-bottom-right-radius: 7px;
 }
 
+.vertical-line{
+  border-left: 1px solid rgb(175, 175, 175);
+}
+
 #forms{
   position: absolute;
   top: 30%;
